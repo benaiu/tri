@@ -1,0 +1,17 @@
+#!/bin/bash
+clear
+. 3lib
+#x es la representacion de un hueco sin terminar de reemplazar
+#el resto de las letras representan piezas
+init
+stackup
+while [[ $a$b$c$d$e$f$g$h == *"x"* ]] #mientras haya huecos (x)
+do 
+clear
+applygravityv2
+verticalize
+sleep ".3" #this sets fall speed
+done
+#
+#check for vertical matches
+#

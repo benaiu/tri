@@ -1,0 +1,57 @@
+#!/bin/bash
+#this is the library that offloads 3
+
+init()
+{
+a=xxxxxxxx ; b=$a ; c=$b ; d=$c ; e=$d ; f=$e ; g=$f ; h=$g  
+#intializing columns to xxxxxxxx
+}
+
+stackup()
+{
+ge="aabbccdd" #ge is a mock of generated tiles to fill exes
+#generate missing chars # this is still a mock
+#I like to call this stackup because it put chars over "old" xes
+a=${a}${ge} 
+b=${b}${ge} 
+c=${c}${ge} 
+d=${d}${ge} 
+e=${e}${ge} 
+f=${f}${ge} 
+g=${g}${ge} 
+h=${h}${ge} 
+}
+
+applygravityv1() 
+{
+#remueve el primer x ,dejando caer el resto de letras
+for n in {a..h}; do 
+$n=${!n/x/}  
+done
+} 
+
+applygravityv2()
+{
+a=${a/x/}
+b=${b/x/}
+c=${c/x/}
+d=${d/x/}
+e=${e/x/}
+f=${f/x/}
+g=${g/x/}
+h=${h/x/}
+}
+
+verticalize() 
+{ 
+#convierte el formato de string horizontal a string vertical
+for l in {7..0}
+ do 
+  echo ${a:${l}:1}${b:${l}:1}${c:${l}:1}${d:${l}:1}${e:${l}:1}${f:${l}:1}${g:${l}:1}${h:${l}:1}
+ done 
+}
+
+ec()
+{
+	for v in {a..h} ; do echo ${!v} ; done #just print the state of columns
+}
